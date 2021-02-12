@@ -1,0 +1,8 @@
+// "mongoURI": "mongodb+srv://sxidsvit:1234qwer@cluster0.b7vva.azure.mongodb.net/app?retryWrites=true&w=majority",
+
+{
+  "port": 5200,
+  "jwtSecret": "scrumLaunch",
+  "mongoURI": "mongodb+srv://sxidsvit:1234qwer@cluster0.b7vva.azure.mongodb.net/scrumLaunch?authSource=admin&replicaSet=atlas-umab7t-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true",
+  "baseUrl": "http://localhost:5100"
+}
