@@ -59,6 +59,7 @@ router.post('/login',
       const { email, password } = req.body
 
       const user = await User.findOne({ email })
+      console.log('user: ', user);
 
       if (!user) {
         return req.status(400).json({ message: 'There is no user with this email' })
@@ -73,7 +74,7 @@ router.post('/login',
       const token = jwt.sign(
         { userId: user.id },
         config.get('jwtSecret'),
-        { expiresIn: '1h' }
+        { expiresIn: '24h' } // change for production !!!
       )
 
       res.status(200).json({ token, UserId: user.id })
