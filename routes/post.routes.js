@@ -1,7 +1,9 @@
 const { Router } = require('express')
 const router = Router()
 const config = require('config')
+const User = require('../models/User')
 const Post = require('../models/Post')
+const Comment = require('../models/Comment')
 const auth = require('../middleware/middleware.auth')
 
 // Create post by  authorized user
@@ -71,15 +73,31 @@ router.get('/auth/', auth, async (req, res) => {
 
 })
 
-//  Get post by id for authorized user
-// router.get('/:id', auth, async (req, res) => {
-//   try {
-//     const post = await Post.findById(req.params.id)
-//     res.json(post)
-//   } catch (e) {
-//     res.status(500).json({ message: 'Get posts by id: something went wrong. Try again ...' })
-//   }
-// })
+//  Get post by id for authorized user & post's comments
+router.get('/:id', auth, async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.id)
+    // console.log('post id: ', post._id);
+    let comments = await Comment.find({ parentId: post._id })
+
+    const truncated = (comment) => {
+      {
+        const text = comment.text
+        console.log('truncated - text: ', text);
+        // const author = await User.findById(comment.owner)
+        // console.log('author: ', author.email);
+        // return { text, author: author.emai }
+        return { text }
+      }
+    }
+    const truncatedComment = comments
+      .map(comment => truncated(comment))
+
+    res.json({ post, comments: truncatedComment })
+  } catch (e) {
+    res.status(500).json({ message: 'Get posts by id: something went wrong. Try again ...' })
+  }
+})
 
 
 
