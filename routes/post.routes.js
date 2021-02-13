@@ -77,23 +77,11 @@ router.get('/auth/', auth, async (req, res) => {
 router.get('/:id', auth, async (req, res) => {
   try {
     const post = await Post.findById(req.params.id)
-    // console.log('post id: ', post._id);
-    let comments = await Comment.find({ parentId: post._id })
+    const comments = await Comment.find({ parentId: post._id })
+    const id = comments[0].owner
+    const user = await User.findById(id)
 
-    const truncated = (comment) => {
-      {
-        const text = comment.text
-        console.log('truncated - text: ', text);
-        // const author = await User.findById(comment.owner)
-        // console.log('author: ', author.email);
-        // return { text, author: author.emai }
-        return { text }
-      }
-    }
-    const truncatedComment = comments
-      .map(comment => truncated(comment))
-
-    res.json({ post, comments: truncatedComment })
+    res.json({ post, comments: { text: post.text, name: user.email } })
   } catch (e) {
     res.status(500).json({ message: 'Get posts by id: something went wrong. Try again ...' })
   }
