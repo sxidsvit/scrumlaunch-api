@@ -9,7 +9,7 @@ router.post('/create', auth, async (req, res) => {
   try {
     const { title, text, userId } = req.body // original uncoded link
     const postObj = {
-      title, text, createdAt: new Date().toLocaleString(), owner: req.user.userId
+      title, text, owner: req.user.userId
     }
     const post = new Post(postObj)
 
@@ -21,6 +21,31 @@ router.post('/create', auth, async (req, res) => {
     res.status(500).json({ message: 'Post create: something went wrong. Try again ...' })
   }
 })
+
+// Edit post by id for authorized user
+router.post('/edit/:id', auth, async (req, res) => {
+  try {
+    let editedPost = {}
+    if (req.body.title) editedPost = { ...editedPost, title: req.body.title }
+    if (req.body.text) editedPost = { ...editedPost, text: req.body.text }
+    const post = await Post.updateOne(
+      { _id: req.params.id }, { ...editedPost, editededAt: Date.now() })
+    res.status(200).json({ message: 'Editing  ok! ' })
+  } catch (e) {
+    res.status(500).json({ message: 'Editing posts by id: something went wrong. Try again ...' })
+  }
+})
+
+//  Delete post by id for authorized user
+router.post('/delete/:id', auth, async (req, res) => {
+  try {
+    const post = await Post.deleteOne({ _id: req.params.id })
+    res.json(post)
+  } catch (e) {
+    res.status(500).json({ message: 'Deleting posts by id: something went wrong. Try again ...' })
+  }
+})
+
 
 // Get authorized user' all posts for authorized user
 router.get('/', auth, async (req, res) => {
@@ -43,6 +68,8 @@ router.get('/:id', auth, async (req, res) => {
     res.status(500).json({ message: 'Get posts by id: something went wrong. Try again ...' })
   }
 })
+
+
 
 
 module.exports = router
