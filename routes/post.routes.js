@@ -47,8 +47,20 @@ router.post('/delete/:id', auth, async (req, res) => {
 })
 
 
-// Get authorized user' all posts for authorized user
-router.get('/', auth, async (req, res) => {
+// Get all posts 
+router.get('/', async (req, res) => {
+  try {
+    const posts = await Post.find({})
+    const truncatedPosts = posts.map(post => ({ id: post._id, title: post.title }))
+    res.json(truncatedPosts)
+  } catch (e) {
+    res.status(500).json({ message: 'Get posts: something went wrong. Try again ...' })
+  }
+
+})
+
+// Get authorized user' all posts 
+router.get('/auth/', auth, async (req, res) => {
   try {
     // get userId from request object
     const posts = await Post.find({ owner: req.user.userId })
@@ -60,14 +72,14 @@ router.get('/', auth, async (req, res) => {
 })
 
 //  Get post by id for authorized user
-router.get('/:id', auth, async (req, res) => {
-  try {
-    const post = await Post.findById(req.params.id)
-    res.json(post)
-  } catch (e) {
-    res.status(500).json({ message: 'Get posts by id: something went wrong. Try again ...' })
-  }
-})
+// router.get('/:id', auth, async (req, res) => {
+//   try {
+//     const post = await Post.findById(req.params.id)
+//     res.json(post)
+//   } catch (e) {
+//     res.status(500).json({ message: 'Get posts by id: something went wrong. Try again ...' })
+//   }
+// })
 
 
 
