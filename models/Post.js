@@ -1,4 +1,5 @@
 const { Schema, model, Types } = require('mongoose')
+const mongoosePaginate = require('mongoose-paginate-v2')
 
 //  Basic schema for Link
 const schema = new Schema({
@@ -9,6 +10,8 @@ const schema = new Schema({
   owner: { type: Types.ObjectId, ref: 'User' }
   // createdAt: { type: Date, default: new Date().toLocaleString() },
 })
+
+schema.plugin(mongoosePaginate)
 
 // eporting the Post model that the schema describes
 module.exports = model('Post', schema)

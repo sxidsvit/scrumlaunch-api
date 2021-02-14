@@ -52,9 +52,18 @@ router.post('/delete/:id', auth, async (req, res) => {
 // Get all posts 
 router.get('/', async (req, res) => {
   try {
-    const posts = await Post.find({})
+    const perPage = req.query.page ? 2 : 1000000000
+    console.log('perPage: ', perPage);
+    const options = {
+      page: `${req.query.page}`,
+      limit: `${Number(perPage)}`,
+      collation: {
+        locale: 'en',
+      },
+    };
+    const { docs: posts, ...pagination } = await Post.paginate({}, options)
     const truncatedPosts = posts.map(post => ({ id: post._id, title: post.title }))
-    res.json(truncatedPosts)
+    res.json({ posts: truncatedPosts, pagination })
   } catch (e) {
     res.status(500).json({ message: 'Get posts: something went wrong. Try again ...' })
   }
@@ -81,7 +90,6 @@ router.get('/:id', auth, async (req, res) => {
     const comments = await Comment.find({ parentId: post._id })
     const commentsDetails = comments.map(comment => (
       { creatorName: comment.owner, text: comment.text }))
-
     const postInfo = {
       id: post._id,
       creatorName: user.name,
