@@ -30,8 +30,6 @@
 
 ![](./supplement/demo.gif)
 
-### [Site](https://asp-beejee.web.app/ 'Right click to open site in separate window')
-
 ### Running Node.js server and application for testing
 
 1. After copying the application to your computer, you need to install the dependencies from package.json.
