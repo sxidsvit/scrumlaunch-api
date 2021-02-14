@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "6028e5239a0340442421fb6d"
+  },
+  "name": "sxidsvit",
+  "password": "$2a$12$.ZQAM6p37jER5e2ASaHY/.Flxg1D8EaiHW3rAOC7DyMcosKe0464a",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6028e53d9a0340442421fb6e"
+  },
+  "name": "nemo",
+  "password": "$2a$12$BMnVByE52tsijOXHKjcLdOFRLwaomaW7BQDnLVw8aXdHNWD5teqP.",
+  "__v": 0
+}]

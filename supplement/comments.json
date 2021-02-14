@@ -1,0 +1,393 @@
+[{
+  "_id": {
+    "$oid": "602901d1bcc5c21bd8dd065c"
+  },
+  "editededAt": null,
+  "parentId": {
+    "$oid": "6028e7df9a0340442421fb74"
+  },
+  "text": "Лучше ешь зефир...",
+  "owner": "nemo",
+  "createdAt": {
+    "$date": "2021-02-14T10:56:17.773Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6029020ebcc5c21bd8dd065d"
+  },
+  "editededAt": null,
+  "parentId": {
+    "$oid": "6028e7df9a0340442421fb74"
+  },
+  "text": "Больше пользы будет от изюма ...",
+  "owner": "nemo",
+  "createdAt": {
+    "$date": "2021-02-14T10:57:18.324Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6029136f4cd35f4a88041f75"
+  },
+  "editededAt": null,
+  "parentId": {
+    "$oid": "6028e7df9a0340442421fb74"
+  },
+  "text": "Значит организму виднее ...",
+  "owner": "nemo",
+  "createdAt": {
+    "$date": "2021-02-14T12:11:27.926Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60291a6e269ef32eb800c9fe"
+  },
+  "editededAt": {
+    "$date": "2021-02-14T12:56:18.042Z"
+  },
+  "parentId": {
+    "$oid": "60290fcd160aaf16345bd5c8"
+  },
+  "text": "Поищи, не ленись, в документации на Mongoose ... ......",
+  "owner": "sxidsvit",
+  "createdAt": {
+    "$date": "2021-02-14T12:41:18.295Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "602920be2601253c7ce00b21"
+  },
+  "editededAt": null,
+  "parentId": {
+    "$oid": "60291a6e269ef32eb800c9fe"
+  },
+  "text": "Хорошо, попробую ...",
+  "owner": "nemo",
+  "createdAt": {
+    "$date": "2021-02-14T13:08:14.942Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60291a6e269ef32eb800d1fe"
+  },
+  "editededAt": {
+    "$date": "2021-02-14T12:56:18.042Z"
+  },
+  "parentId": {
+    "$oid": "60290fcd160aaf16345bd5c8"
+  },
+  "text": "1. Поищи, не ленись, в документации на Mongoose ... ......",
+  "owner": "sxidsvit",
+  "createdAt": {
+    "$date": "2021-02-14T12:41:18.295Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60291a6e269ef32eb800d2fe"
+  },
+  "editededAt": {
+    "$date": "2021-02-14T12:56:18.042Z"
+  },
+  "parentId": {
+    "$oid": "60290fcd160aaf16345bd5c8"
+  },
+  "text": "2. Поищи, не ленись, в документации на Mongoose ... ......",
+  "owner": "sxidsvit",
+  "createdAt": {
+    "$date": "2021-02-14T12:41:18.295Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60291a6e269ef32eb800d3fe"
+  },
+  "editededAt": {
+    "$date": "2021-02-14T12:56:18.042Z"
+  },
+  "parentId": {
+    "$oid": "60290fcd160aaf16345bd5c8"
+  },
+  "text": "3. Поищи, не ленись, в документации на Mongoose ... ......",
+  "owner": "sxidsvit",
+  "createdAt": {
+    "$date": "2021-02-14T12:41:18.295Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60291a6e269ef32eb800d4fe"
+  },
+  "editededAt": {
+    "$date": "2021-02-14T12:56:18.042Z"
+  },
+  "parentId": {
+    "$oid": "60290fcd160aaf16345bd5c8"
+  },
+  "text": "4. Поищи, не ленись, в документации на Mongoose ... ......",
+  "owner": "sxidsvit",
+  "createdAt": {
+    "$date": "2021-02-14T12:41:18.295Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60291a6e269ef32eb800d5fe"
+  },
+  "editededAt": {
+    "$date": "2021-02-14T12:56:18.042Z"
+  },
+  "parentId": {
+    "$oid": "60290fcd160aaf16345bd5c8"
+  },
+  "text": "5. Поищи, не ленись, в документации на Mongoose ... ......",
+  "owner": "sxidsvit",
+  "createdAt": {
+    "$date": "2021-02-14T12:41:18.295Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60291a6e269ef32eb800d6fe"
+  },
+  "editededAt": {
+    "$date": "2021-02-14T12:56:18.042Z"
+  },
+  "parentId": {
+    "$oid": "60290fcd160aaf16345bd5c8"
+  },
+  "text": "6. Поищи, не ленись, в документации на Mongoose ... ......",
+  "owner": "sxidsvit",
+  "createdAt": {
+    "$date": "2021-02-14T12:41:18.295Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60291a6e269ef32eb800d7fe"
+  },
+  "editededAt": {
+    "$date": "2021-02-14T12:56:18.042Z"
+  },
+  "parentId": {
+    "$oid": "60290fcd160aaf16345bd5c8"
+  },
+  "text": "7. Поищи, не ленись, в документации на Mongoose ... ......",
+  "owner": "sxidsvit",
+  "createdAt": {
+    "$date": "2021-02-14T12:41:18.295Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60291a6e269ef32eb800d8fe"
+  },
+  "editededAt": {
+    "$date": "2021-02-14T12:56:18.042Z"
+  },
+  "parentId": {
+    "$oid": "60290fcd160aaf16345bd5c8"
+  },
+  "text": "8. Поищи, не ленись, в документации на Mongoose ... ......",
+  "owner": "sxidsvit",
+  "createdAt": {
+    "$date": "2021-02-14T12:41:18.295Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60291a6e269ef32eb800d9fe"
+  },
+  "editededAt": {
+    "$date": "2021-02-14T12:56:18.042Z"
+  },
+  "parentId": {
+    "$oid": "60290fcd160aaf16345bd5c8"
+  },
+  "text": "9. Поищи, не ленись, в документации на Mongoose ... ......",
+  "owner": "sxidsvit",
+  "createdAt": {
+    "$date": "2021-02-14T12:41:18.295Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60291a6e269ef32eb800dafe"
+  },
+  "editededAt": {
+    "$date": "2021-02-14T12:56:18.042Z"
+  },
+  "parentId": {
+    "$oid": "60290fcd160aaf16345bd5c8"
+  },
+  "text": "10. Поищи, не ленись, в документации на Mongoose ... ......",
+  "owner": "sxidsvit",
+  "createdAt": {
+    "$date": "2021-02-14T12:41:18.295Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60291a6e269ef32eb800dbfe"
+  },
+  "editededAt": {
+    "$date": "2021-02-14T12:56:18.042Z"
+  },
+  "parentId": {
+    "$oid": "60290fcd160aaf16345bd5c8"
+  },
+  "text": "11. Поищи, не ленись, в документации на Mongoose ... ......",
+  "owner": "sxidsvit",
+  "createdAt": {
+    "$date": "2021-02-14T12:41:18.295Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60291a6e269ef32eb800dcfe"
+  },
+  "editededAt": {
+    "$date": "2021-02-14T12:56:18.042Z"
+  },
+  "parentId": {
+    "$oid": "60290fcd160aaf16345bd5c8"
+  },
+  "text": "12. Поищи, не ленись, в документации на Mongoose ... ......",
+  "owner": "sxidsvit",
+  "createdAt": {
+    "$date": "2021-02-14T12:41:18.295Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60291a6e269ef32eb800ddfe"
+  },
+  "editededAt": {
+    "$date": "2021-02-14T12:56:18.042Z"
+  },
+  "parentId": {
+    "$oid": "60290fcd160aaf16345bd5c8"
+  },
+  "text": "13. Поищи, не ленись, в документации на Mongoose ... ......",
+  "owner": "sxidsvit",
+  "createdAt": {
+    "$date": "2021-02-14T12:41:18.295Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60291a6e269ef32eb800defe"
+  },
+  "editededAt": {
+    "$date": "2021-02-14T12:56:18.042Z"
+  },
+  "parentId": {
+    "$oid": "60290fcd160aaf16345bd5c8"
+  },
+  "text": "14. Поищи, не ленись, в документации на Mongoose ... ......",
+  "owner": "sxidsvit",
+  "createdAt": {
+    "$date": "2021-02-14T12:41:18.295Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60291a6e269ef32eb800dffe"
+  },
+  "editededAt": {
+    "$date": "2021-02-14T12:56:18.042Z"
+  },
+  "parentId": {
+    "$oid": "60290fcd160aaf16345bd5c8"
+  },
+  "text": "15. Поищи, не ленись, в документации на Mongoose ... ......",
+  "owner": "sxidsvit",
+  "createdAt": {
+    "$date": "2021-02-14T12:41:18.295Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60291a6e269ef32eb801dffe"
+  },
+  "editededAt": {
+    "$date": "2021-02-14T12:56:18.042Z"
+  },
+  "parentId": {
+    "$oid": "60290fcd160aaf16345bd5c8"
+  },
+  "text": "16. Поищи, не ленись, в документации на Mongoose ... ......",
+  "owner": "sxidsvit",
+  "createdAt": {
+    "$date": "2021-02-14T12:41:18.295Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60291a6e269ef32eb802dffe"
+  },
+  "editededAt": {
+    "$date": "2021-02-14T12:56:18.042Z"
+  },
+  "parentId": {
+    "$oid": "60290fcd160aaf16345bd5c8"
+  },
+  "text": "17. Поищи, не ленись, в документации на Mongoose ... ......",
+  "owner": "sxidsvit",
+  "createdAt": {
+    "$date": "2021-02-14T12:41:18.295Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60291a6e269ef32eb803dffe"
+  },
+  "editededAt": {
+    "$date": "2021-02-14T12:56:18.042Z"
+  },
+  "parentId": {
+    "$oid": "60290fcd160aaf16345bd5c8"
+  },
+  "text": "18. Поищи, не ленись, в документации на Mongoose ... ......",
+  "owner": "sxidsvit",
+  "createdAt": {
+    "$date": "2021-02-14T12:41:18.295Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60291a6e269ef32eb804dffe"
+  },
+  "editededAt": {
+    "$date": "2021-02-14T12:56:18.042Z"
+  },
+  "parentId": {
+    "$oid": "60290fcd160aaf16345bd5c8"
+  },
+  "text": "19. Поищи, не ленись, в документации на Mongoose ... ......",
+  "owner": "sxidsvit",
+  "createdAt": {
+    "$date": "2021-02-14T12:41:18.295Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60291a6e269ef32eb805dffe"
+  },
+  "editededAt": {
+    "$date": "2021-02-14T12:56:18.042Z"
+  },
+  "parentId": {
+    "$oid": "60290fcd160aaf16345bd5c8"
+  },
+  "text": "20. Поищи, не ленись, в документации на Mongoose ... ......",
+  "owner": "sxidsvit",
+  "createdAt": {
+    "$date": "2021-02-14T12:41:18.295Z"
+  },
+  "__v": 0
+}]
