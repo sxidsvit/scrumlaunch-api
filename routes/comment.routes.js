@@ -5,7 +5,7 @@ const Comment = require('../models/Comment')
 const User = require('../models/User')
 const auth = require('../middleware/middleware.auth')
 
-// Create post by  authorized user
+// Create a comment by authorized user
 router.post('/create', auth, async (req, res) => {
   try {
     const { text, parentId } = req.body
@@ -24,7 +24,26 @@ router.post('/create', auth, async (req, res) => {
   }
 })
 
-// Edit post by id for authorized user
+// Create a comment to a comment by authorized user
+router.post('/create-comment', auth, async (req, res) => {
+  try {
+    const { text, parentId } = req.body
+    const user = await User.findById(req.user.userId)
+    const postObj = {
+      parentId: req.body.parentId, text, owner: user.name
+    }
+    const comment = new Comment(postObj)
+
+    comment.save()
+
+    res.status(201).json({ comment })
+
+  } catch (e) {
+    res.status(500).json({ message: 'Comment create: something went wrong. Try again ...' })
+  }
+})
+
+// Edit a comment by id for authorized user
 router.post('/edit/:id', auth, async (req, res) => {
   try {
     let editedComment = {}
@@ -37,7 +56,7 @@ router.post('/edit/:id', auth, async (req, res) => {
   }
 })
 
-//  Delete comment by id for authorized user
+//  Delete a comment by id for authorized user
 router.post('/delete/:id', auth, async (req, res) => {
   try {
     const comment = await Comment.deleteOne({ _id: req.params.id })
@@ -59,7 +78,6 @@ router.get('/', auth, async (req, res) => {
   } catch (e) {
     res.status(500).json({ message: 'Get posts: something went wrong. Try again ...' })
   }
-
 })
 
 
