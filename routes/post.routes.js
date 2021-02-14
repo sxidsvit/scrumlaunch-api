@@ -77,11 +77,18 @@ router.get('/auth/', auth, async (req, res) => {
 router.get('/:id', auth, async (req, res) => {
   try {
     const post = await Post.findById(req.params.id)
+    const user = await User.findById(post.owner)
     const comments = await Comment.find({ parentId: post._id })
-    const id = comments[0].owner
-    const user = await User.findById(id)
+    const commentsDetails = comments.map(comment => (
+      { creatorName: comment.owner, text: comment.text }))
 
-    res.json({ post, comments: { text: post.text, name: user.email } })
+    const postInfo = {
+      id: post._id,
+      creatorName: user.name,
+      title: post.title
+    }
+
+    res.json({ post: postInfo, comments: commentsDetails })
   } catch (e) {
     res.status(500).json({ message: 'Get posts by id: something went wrong. Try again ...' })
   }

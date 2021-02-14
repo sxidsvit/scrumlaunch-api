@@ -2,14 +2,16 @@ const { Router } = require('express')
 const router = Router()
 const config = require('config')
 const Comment = require('../models/Comment')
+const User = require('../models/User')
 const auth = require('../middleware/middleware.auth')
 
 // Create post by  authorized user
 router.post('/create', auth, async (req, res) => {
   try {
-    const { text, parentId } = req.body // original uncoded link
+    const { text, parentId } = req.body
+    const user = await User.findById(req.user.userId)
     const postObj = {
-      parentId: req.body.parentId, text, owner: req.user.userId
+      parentId: req.body.parentId, text, owner: user.name
     }
     const comment = new Comment(postObj)
 
@@ -35,7 +37,7 @@ router.post('/edit/:id', auth, async (req, res) => {
   }
 })
 
-//  Delete post by id for authorized user
+//  Delete comment by id for authorized user
 router.post('/delete/:id', auth, async (req, res) => {
   try {
     const comment = await Comment.deleteOne({ _id: req.params.id })
@@ -46,29 +48,19 @@ router.post('/delete/:id', auth, async (req, res) => {
 })
 
 
-// Get authorized user' all posts for authorized user
+// Get all comments for authorized user
 router.get('/', auth, async (req, res) => {
   try {
     // get userId from request object
-    const comment = await Comment.find({ owner: req.user.userId })
+    const user = await User.findById(req.user.userId)
+    // get user's comments
+    const comment = await Comment.find({ owner: user.name })
     res.json(comment)
   } catch (e) {
     res.status(500).json({ message: 'Get posts: something went wrong. Try again ...' })
   }
 
 })
-
-//  Get post by id for authorized user
-router.get('/:id', auth, async (req, res) => {
-  try {
-    const post = await Comment.findById(req.params.id)
-    res.json(post)
-  } catch (e) {
-    res.status(500).json({ message: 'Get posts by id: something went wrong. Try again ...' })
-  }
-})
-
-
 
 
 module.exports = router
