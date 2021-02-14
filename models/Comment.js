@@ -1,4 +1,5 @@
 const { Schema, model, Types } = require('mongoose')
+const mongoosePaginate = require('mongoose-paginate-v2')
 
 //  Basic schema for Link
 const schema = new Schema({
@@ -9,6 +10,7 @@ const schema = new Schema({
   editededAt: { type: Date, default: null }
 })
 
+schema.plugin(mongoosePaginate)
 
 // eporting the Post model that the schema describes
 module.exports = model('Comment', schema)

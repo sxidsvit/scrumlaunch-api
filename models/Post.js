@@ -8,7 +8,6 @@ const schema = new Schema({
   createdAt: { type: Date, default: Date.now },
   editededAt: { type: Date, default: null },
   owner: { type: Types.ObjectId, ref: 'User' }
-  // createdAt: { type: Date, default: new Date().toLocaleString() },
 })
 
 schema.plugin(mongoosePaginate)

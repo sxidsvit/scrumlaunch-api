@@ -52,8 +52,7 @@ router.post('/delete/:id', auth, async (req, res) => {
 // Get all posts 
 router.get('/', async (req, res) => {
   try {
-    const perPage = req.query.page ? 2 : 1000000000
-    console.log('perPage: ', perPage);
+    const perPage = req.query.page ? 10 : 1000000000
     const options = {
       page: `${req.query.page}`,
       limit: `${Number(perPage)}`,
@@ -70,24 +69,22 @@ router.get('/', async (req, res) => {
 
 })
 
-// Get authorized user' all posts 
-router.get('/auth/', auth, async (req, res) => {
-  try {
-    // get userId from request object
-    const posts = await Post.find({ owner: req.user.userId })
-    res.json(posts)
-  } catch (e) {
-    res.status(500).json({ message: 'Get posts: something went wrong. Try again ...' })
-  }
-
-})
-
 //  Get post by id for authorized user & post's comments
 router.get('/:id', auth, async (req, res) => {
   try {
     const post = await Post.findById(req.params.id)
     const user = await User.findById(post.owner)
-    const comments = await Comment.find({ parentId: post._id })
+
+    const perPage = req.query.page ? 10 : 1000000000
+    const options = {
+      page: `${req.query.page}`,
+      limit: `${Number(perPage)}`,
+      collation: {
+        locale: 'en',
+      },
+    };
+
+    const { docs: comments, ...pagination } = await Comment.paginate({}, options)
     const commentsDetails = comments.map(comment => (
       { creatorName: comment.owner, text: comment.text }))
     const postInfo = {
@@ -95,10 +92,22 @@ router.get('/:id', auth, async (req, res) => {
       creatorName: user.name,
       title: post.title
     }
-
-    res.json({ post: postInfo, comments: commentsDetails })
+    res.json({ post: postInfo, comments: commentsDetails, pagination })
   } catch (e) {
     res.status(500).json({ message: 'Get posts by id: something went wrong. Try again ...' })
+  }
+})
+
+//  ADDITIONAL API 
+
+// Get authorized user' all posts  
+router.get('/auth/', auth, async (req, res) => {
+  try {
+    // get userId from request object
+    const posts = await Post.find({ owner: req.user.userId })
+    res.json(posts)
+  } catch (e) {
+    res.status(500).json({ message: 'Get posts: something went wrong. Try again ...' })
   }
 })
 
