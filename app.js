@@ -3,7 +3,8 @@ const config = require('config')
 const path = require('path')
 const mongoose = require('mongoose')
 
-const app = express() // start the server 
+const app = express() // start the http server 
+// const app = require("https-localhost")() // start the https  server 
 
 app.use(express.json({ extended: true }))
 app.use('/api/auth', require('./routes/auth.routes'))
